@@ -1,14 +1,31 @@
-{% extends "AppGym/padre.html" %}
+{% extends "padre.html" %}
 
 {% load static %}
 
 {% block contenidoQueCambia %}
-
-
-    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
-    <h1>Entrenadores</h1>
-    <p>Aquí tenemos info de los Entrenadores</p>
-
   
+<h1>Formulario - Agregar Entrenador</h1>
+    
+{% if miFormulario.errors %}
+
+<p style="color: red;"> Están mal los datos, revisar</p>
+
+{% endif %}
+
+
+<form action="" method="POST">{% csrf_token %}
+
+    
+    <table>
+
+        {{ miFormulario.as_table }}
+
+
+    </table>
+
+
+    <input type="submit", value="Enviar">
+
+</form>
 
 {% endblock %}

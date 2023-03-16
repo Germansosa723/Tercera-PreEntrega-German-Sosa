@@ -6,4 +6,4 @@ admin.site.register(Entrenadores)
 
 admin.site.register(Inscriptos)
 
-admin.site.register(rutinas)
+admin.site.register(Rutinas)

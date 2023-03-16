@@ -1,13 +1,33 @@
-{% extends "AppGym/inscriptos.html" %}
+{% extends "padre.html" %}
 
 {% load static %}
 
 {% block contenidoQueCambia %}
 
+<h1>Formulario - Agregar Inscripto </h1>
+    
+{% if miFormulario.errors %}
 
-    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
-    <h1>inscriptos</h1>
-    <p>Aquí tenemos la info de los inscriptos</p>
+<p style="color: red;"> Están mal los datos, revisar</p>
+
+{% endif %}
+
+
+<form action="" method="POST">{% csrf_token %}
+
+    
+    <table>
+
+        {{ miFormulario.as_table }}
+
+
+    </table>
+
+
+    <input type="submit", value="Enviar">
+
+</form>
+    
 
   
 

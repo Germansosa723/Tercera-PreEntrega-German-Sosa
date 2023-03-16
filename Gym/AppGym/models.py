@@ -12,6 +12,6 @@ class Inscriptos(models.Model):
     apellido = models.CharField(max_length=15)
     email = models.EmailField()
 
-class rutinas(models.Model):
+class Rutinas(models.Model):
     nombre = models.CharField(max_length=10)
     ejercicios = models.CharField(max_length=300)

@@ -1,14 +1,31 @@
-{% extends "AppGym/rutinas.html" %}
+{% extends "padre.html" %}
 
 {% load static %}
 
 {% block contenidoQueCambia %}
 
+<h1>Formulario - Buscar Rutina</h1>
 
-    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
-    <h1>rutinas</h1>
-    <p>Aquí tenemos la info de las rutinas</p>
+{% if miFormulario.errors %}
 
-  
+<p style="color: red;"> Están mal los datos, revisar</p>
+
+{% endif %}
+<form action="" method="POST">{% csrf_token %} 
+
+    
+    <table>
+        {{ miFormulario.as_table }}
+    </table>
+
+    <input type="submit", value="Enviar">
+
+</form>
+
+<ul>
+    {%  for rutinas in rutinases  %}
+    <li> {{rutinas.id}} - {{ rutinas.nombre_rutinas }} </li>
+    {% endfor %}
+</ul>  
 
 {% endblock %}
