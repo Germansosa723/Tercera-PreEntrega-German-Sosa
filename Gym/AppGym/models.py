@@ -14,4 +14,4 @@ class Inscriptos(models.Model):
 
 class rutinas(models.Model):
     nombre = models.CharField(max_length=10)
-    ejercicios = models.CharField(max_length=50)
+    ejercicios = models.CharField(max_length=300)
